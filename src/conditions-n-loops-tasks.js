@@ -99,8 +99,11 @@ function canQueenCaptureKing(queen, king) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  if (a + b > c && b + c > a && a + c > b) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -117,9 +120,48 @@ function isIsoscelesTriangle(/* a, b, c */) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
+function convertToRomanNumerals(num) {
+  let res = '';
+  if (Math.floor(num / 10) === 1) {
+    res += 'X';
+  }
+  if (Math.floor(num / 10) === 2) {
+    res += 'XX';
+  }
+  if (Math.floor(num / 10) === 3) {
+    res += 'XXX';
+  }
+  if (num % 10 === 1) {
+    res += 'I';
+  }
+  if (num % 10 === 2) {
+    res += 'II';
+  }
+  if (num % 10 === 3) {
+    res += 'III';
+  }
+  if (num % 10 === 4) {
+    res += 'IV';
+  }
+  if (num % 10 === 5) {
+    res += 'V';
+  }
+  if (num % 10 === 6) {
+    res += 'VI';
+  }
+  if (num % 10 === 7) {
+    res += 'VII';
+  }
+  if (num % 10 === 8) {
+    res += 'VIII';
+  }
+  if (num % 10 === 9) {
+    res += 'IX';
+  }
+  return res;
 }
+
+console.log(convertToRomanNumerals(31));
 
 /**
  * Converts a number to a string, replacing digits with words.
@@ -152,8 +194,15 @@ function convertNumberToString(/* numberStr */) {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  let newStr = '';
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    newStr += str[i];
+  }
+  if (str === newStr) {
+    return true;
+  }
+  return false;
 }
 
 /**
