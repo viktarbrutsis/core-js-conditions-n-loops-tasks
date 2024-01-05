@@ -161,8 +161,6 @@ function convertToRomanNumerals(num) {
   return res;
 }
 
-console.log(convertToRomanNumerals(31));
-
 /**
  * Converts a number to a string, replacing digits with words.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -219,8 +217,13 @@ function isPalindrome(str) {
  *  'qwerty', 'Q'     => -1
  *  'qwerty', 'p'     => -1
  */
-function getIndexOf(/* str, letter */) {
-  throw new Error('Not implemented');
+function getIndexOf(str, letter) {
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === letter) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 /**
@@ -238,8 +241,17 @@ function getIndexOf(/* str, letter */) {
  *  12345, 0    => false
  *  12345, 6    => false
  */
-function isContainNumber(/* num, digit */) {
-  throw new Error('Not implemented');
+function isContainNumber(num, digit) {
+  let str = '';
+  let dig = '';
+  str += num;
+  dig += digit;
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === dig) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
